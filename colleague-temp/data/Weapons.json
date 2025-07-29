@@ -1,0 +1,11 @@
+[
+null,
+{"id":1,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":1,"value":0}],"iconIndex":97,"name":"Greatsword","note":"","params":[0,0,3,0,0,0,-2,0],"price":0,"wtypeId":2},
+{"id":2,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":1,"value":0}],"iconIndex":97,"name":"RAPIER","note":"","params":[0,0,1,0,0,0,1,0],"price":0,"wtypeId":2},
+{"id":3,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":1,"value":0},{"code":43,"dataId":8,"value":1}],"iconIndex":97,"name":"CROSSBOW","note":"","params":[0,0,1,0,0,0,0,0],"price":0,"wtypeId":2},
+{"id":4,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":1,"value":0},{"code":43,"dataId":13,"value":1}],"iconIndex":97,"name":"FIRE GAUNLET","note":"","params":[0,0,0,0,1,0,0,0],"price":0,"wtypeId":2},
+{"id":5,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":2,"value":0}],"iconIndex":107,"name":"LEGENDARY STAFF","note":"","params":[0,0,0,0,2,0,0,0],"price":0,"wtypeId":4},
+{"id":6,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":2,"value":0},{"code":14,"dataId":4,"value":1}],"iconIndex":121,"name":"FIRE SCROLL","note":"","params":[0,0,0,0,0,0,0,0],"price":0,"wtypeId":4},
+{"id":7,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":2,"value":0},{"code":14,"dataId":5,"value":1}],"iconIndex":121,"name":"ICE SCROLL","note":"","params":[0,0,0,0,0,0,0,0],"price":0,"wtypeId":4},
+{"id":8,"animationId":6,"description":"PLACEHOLDER DESCRIPTION","etypeId":1,"traits":[{"code":31,"dataId":2,"value":0},{"code":14,"dataId":6,"value":1}],"iconIndex":121,"name":"ELECTRIC SCROLL","note":"","params":[0,0,0,0,0,0,0,0],"price":0,"wtypeId":4}
+]
