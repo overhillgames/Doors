@@ -5,6 +5,8 @@
  * @help
  * Put this BELOW VisuStella Core Engine + Options Core if using.
  * Defines shipped defaults. Players can still rebind if enabled.
+ * Sets E as default "ok" to coincide with WASD enabled in Core Engine
+ * Sets PageUp and PageDown to default in Options Core for PageUp and PageDown
  */
 
 (() => {
