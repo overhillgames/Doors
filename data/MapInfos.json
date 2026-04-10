@@ -23,8 +23,8 @@ null,
 {"id":21,"expanded":false,"name":"Mekinations","order":22,"parentId":22,"scrollX":1254,"scrollY":812,"quick":false},
 {"id":22,"expanded":true,"name":"DEBUG","order":21,"parentId":0,"scrollX":962.4,"scrollY":540,"quick":false},
 {"id":23,"expanded":false,"name":"caleb map example","order":26,"parentId":0,"scrollX":973.1999999999999,"scrollY":550.8,"quick":false},
-{"id":24,"expanded":true,"name":"Residence III","order":14,"parentId":1,"scrollX":736.5,"scrollY":465,"quick":false},
+{"id":24,"expanded":true,"name":"Residence III (vacant)","order":14,"parentId":1,"scrollX":720,"scrollY":416,"quick":false},
 {"id":25,"expanded":false,"name":"footsteps testing","order":23,"parentId":22,"scrollX":962.4,"scrollY":540,"quick":false},
 {"id":26,"expanded":false,"name":"Mountain Defense Pass","order":24,"parentId":22,"scrollX":1109,"scrollY":672,"quick":false},
-{"id":27,"expanded":true,"name":"Netherwhere Cavern","order":25,"parentId":22,"scrollX":966,"scrollY":604,"quick":false}
+{"id":27,"expanded":true,"name":"Netherwhere Cavern","order":25,"parentId":22,"scrollX":972,"scrollY":564,"quick":false}
 ]
