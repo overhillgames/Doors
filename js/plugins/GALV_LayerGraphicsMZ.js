@@ -499,7 +499,7 @@ Spriteset_Battle.prototype.createLayerGraphics = function() {
 		// If settings are empty for the layer
 		if (Galv.LG.isEmpty(blayers[propertyId]) || blayers[propertyId]["graphic"] == "") {
 			let ind = this._battleField.children.indexOf(this.layerGraphics[propertyId]);
-			this._battleField.removeChildAt(ind);
+			if (ind >= 0) this._battleField.removeChildAt(ind); // Guard: sprite may not be in battleField yet
 		} else {
 			let z = blayers[propertyId].z;
 			this._battleField.addChildAt(this.layerGraphics[propertyId],z);
@@ -539,7 +539,7 @@ Spriteset_Map.prototype.createLayerGraphics = function() {
 		// If settings are empty for the layer
 		if (Galv.LG.isEmpty(mapGraphics[id]) || mapGraphics[id]["graphic"] == "") {
 			let ind = this._tilemap.children.indexOf(this.layerGraphics[id]);
-			this._tilemap.removeChildAt(ind);
+			if (ind >= 0) this._tilemap.removeChildAt(ind); // Guard: sprite may not be in tilemap yet
 		} else {
 			this._tilemap.addChild(this.layerGraphics[id]);
 		};
