@@ -1,6 +1,6 @@
 /*:
  * @target MZ
- * @plugindesc [v1.01] Replaces face graphics at runtime when matching switches are ON.
+ * @plugindesc [v1.02] Replaces face graphics at runtime when matching switches are ON.
  * @author Overhill Games
  *
  * @param Face Swaps
@@ -12,7 +12,7 @@
  * @help
  * ============================================================================
  * OG_FaceSwap
- * Version 1.01
+ * Version 1.02
  * ============================================================================
  *
  * This plugin replaces face graphics at runtime when a specified switch is ON.
@@ -29,11 +29,32 @@
  *   Switch ID
  *   Original Face
  *   Replacement Face
+ *   Face Index
  *
- * When the Switch ID is ON, any Show Text command using Original Face will
- * display Replacement Face instead.
+ * When the Switch ID is ON, any matching Show Text command using Original Face
+ * will display Replacement Face instead.
  *
- * The face index is preserved.
+ * ============================================================================
+ * Face Index Settings
+ * ============================================================================
+ *
+ * The Face Index setting determines which face slot should be swapped.
+ *
+ * Use ALL to swap every face in the Original Face file.
+ * Use 0-7 to swap only one specific face slot.
+ *
+ * If Face Index is left blank, the plugin treats it as ALL.
+ *
+ * Example:
+ *
+ *   Original Face: Actor1
+ *   Replacement Face: Actor1_NoArmor
+ *   Face Index: 7
+ *
+ * Result:
+ *
+ *   Only Actor1 face index 7 will be replaced.
+ *   Actor1 face indexes 0-6 will be ignored and will display normally.
  *
  * ============================================================================
  * Face Index Explanation
@@ -45,6 +66,10 @@
  *
  *   0 1 2 3
  *   4 5 6 7
+ *
+ * If the original character is in the bottom-right slot, that is index 7.
+ *
+ * By default, the replacement uses the same face index as the original.
  *
  * For example, if a Show Text command uses:
  *
@@ -58,9 +83,6 @@
  *
  * This means your replacement face file should usually place the replacement
  * portrait in the same slot as the original.
- *
- * If the original character is in the bottom-right slot, that is index 7.
- * The replacement version should also be in the bottom-right slot.
  *
  * ============================================================================
  * Example Uses
@@ -82,8 +104,8 @@
  * - Put all face files in img/faces/.
  * - Do not include ".png" in the parameter value.
  * - Replacement files should usually match the same 4x2 face layout.
- * - If multiple swaps could apply to the same original face, the first active
- *   matching entry in the Face Swaps list is used.
+ * - If multiple swaps could apply to the same original face and index, the
+ *   first active matching entry in the Face Swaps list is used.
  */
 
 /*~struct~FaceSwap:
@@ -106,6 +128,21 @@
  * @dir img/faces/
  * @default Actor1_NoArmor
  * @desc choose the file where the replacement face image is found
+ *
+ * @param Face Index
+ * @text Face Index
+ * @type combo
+ * @option ALL
+ * @option 0
+ * @option 1
+ * @option 2
+ * @option 3
+ * @option 4
+ * @option 5
+ * @option 6
+ * @option 7
+ * @default ALL
+ * @desc Choose ALL to swap every face in the file, or choose 0-7 to swap only that face slot. Blank is treated as ALL.
  */
 
 (() => {
@@ -122,6 +159,22 @@
     }
   }
 
+  function parseFaceIndex(value) {
+    const text = String(value ?? "").trim().toUpperCase();
+
+    if (!text || text === "ALL") {
+      return null;
+    }
+
+    const index = Number(text);
+
+    if (Number.isInteger(index) && index >= 0 && index <= 7) {
+      return index;
+    }
+
+    return null;
+  }
+
   const rawSwaps = parseJson(params["Face Swaps"], []);
 
   const faceSwaps = rawSwaps
@@ -130,7 +183,8 @@
     .map(entry => ({
       switchId: Number(entry["Switch ID"] || 0),
       originalFace: String(entry["Original Face"] || ""),
-      replacementFace: String(entry["Replacement Face"] || "")
+      replacementFace: String(entry["Replacement Face"] || ""),
+      faceIndex: parseFaceIndex(entry["Face Index"])
     }))
     .filter(entry =>
       entry.switchId > 0 &&
@@ -138,12 +192,17 @@
       entry.replacementFace
     );
 
+  function matchesFaceIndex(entry, faceIndex) {
+    return entry.faceIndex === null || entry.faceIndex === faceIndex;
+  }
+
   const _Game_Message_setFaceImage = Game_Message.prototype.setFaceImage;
 
   Game_Message.prototype.setFaceImage = function(faceName, faceIndex) {
     const swap = faceSwaps.find(entry =>
       $gameSwitches.value(entry.switchId) &&
-      faceName === entry.originalFace
+      faceName === entry.originalFace &&
+      matchesFaceIndex(entry, faceIndex)
     );
 
     if (swap) {
