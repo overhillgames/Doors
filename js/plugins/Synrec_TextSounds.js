@@ -16,6 +16,10 @@
  * @help Create text sounds which play by default or based on
  * face graphic set.
  * You must credit Synrec.
+ *
+ * EDITED by Overhill Games: removed AudioManager.stopSe() in
+ * playSound() to prevent text sounds from cutting off other SEs
+ * (e.g. chest opening sounds).
  * 
  * @param Use Font Size Volume
  * @desc Changes volume based on variance from font size
@@ -282,7 +286,6 @@ Window_Message.prototype.playSound = function(textState){
                     sound.volume -= Math.floor((diff / baseSize) * sound.volume);
                 }
             }
-            AudioManager.stopSe();
             AudioManager.playSe(sound);
         }
     }
