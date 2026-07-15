@@ -1,10 +1,10 @@
 [
 null,
-{"id":1,"expanded":true,"name":"Village","order":1,"parentId":0,"scrollX":1509,"scrollY":1353},
-{"id":2,"expanded":true,"name":"Forest","order":19,"parentId":0,"scrollX":1318.6666666666667,"scrollY":1105.3333333333333,"quick":false},
+{"id":1,"expanded":true,"name":"Village","order":1,"parentId":0,"scrollX":1096.3636363636365,"scrollY":1572},
+{"id":2,"expanded":true,"name":"Forest","order":19,"parentId":0,"scrollX":1308,"scrollY":601.3333333333334,"quick":false},
 {"id":3,"expanded":false,"name":"Mountain Defense Pass","order":21,"parentId":0,"scrollX":983,"scrollY":676,"quick":false},
 {"id":4,"expanded":true,"name":"Temple","order":2,"parentId":1,"scrollX":1216.5,"scrollY":688.5,"quick":false},
-{"id":5,"expanded":false,"name":"Monk Alcove I (Joyo)","order":3,"parentId":4,"scrollX":589.1999999999999,"scrollY":372,"quick":false},
+{"id":5,"expanded":false,"name":"Monk Alcove I (Joyo)","order":3,"parentId":4,"scrollX":1081.3333333333333,"scrollY":601.3333333333334,"quick":false},
 {"id":6,"expanded":false,"name":"Monk Alcove II (Bergeron)","order":4,"parentId":4,"scrollX":589.1999999999999,"scrollY":372,"quick":false},
 {"id":7,"expanded":true,"name":"Netherwhere Cavern","order":5,"parentId":4,"scrollX":1081.2,"scrollY":381.59999999999997,"quick":false},
 {"id":8,"expanded":false,"name":"General Store","order":10,"parentId":1,"scrollX":1216.5,"scrollY":688.5,"quick":false},
@@ -28,7 +28,7 @@ null,
 {"id":26,"expanded":false,"name":"Mountain Defense Pass","order":26,"parentId":22,"scrollX":1216.5,"scrollY":688.5,"quick":false},
 {"id":27,"expanded":false,"name":"Cave: Spell Glade","order":8,"parentId":13,"scrollX":589.1999999999999,"scrollY":372,"quick":false},
 {"id":28,"expanded":true,"name":"Netherwhere Cavern","order":27,"parentId":22,"scrollX":1081.2,"scrollY":450,"quick":false},
-{"id":29,"expanded":false,"name":"Well","order":18,"parentId":1,"scrollX":973.1999999999999,"scrollY":549.6,"quick":false},
+{"id":29,"expanded":false,"name":"Well","order":18,"parentId":1,"scrollX":884.7272727272727,"scrollY":492,"quick":false},
 {"id":30,"expanded":false,"name":"DEBUG_SetDifficulty","order":28,"parentId":22,"scrollX":1216.5,"scrollY":688.5,"quick":false},
 {"id":31,"expanded":false,"name":"Dryad's Treehouse","order":29,"parentId":22,"scrollX":811,"scrollY":459,"quick":false}
 ]
